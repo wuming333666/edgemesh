@@ -83,7 +83,8 @@ func NewDefaultEdgeMeshAgentMinConfig() *EdgeMeshAgentConfig {
 	c := &EdgeMeshAgentConfig{
 		Modules: &AgentModules{
 			EdgeProxyConfig: &EdgeProxyConfig{
-				Enable: true,
+				Enable:    true,
+				PortRange: "45000-50000",
 			},
 			EdgeTunnelConfig: &EdgeTunnelConfig{
 				Enable: true,

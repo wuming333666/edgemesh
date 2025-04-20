@@ -173,6 +173,7 @@ type EdgeProxyConfig struct {
 	// Allowed values are: "FilterIfLabelExists", "FilterIfLabelDoesNotExists"
 	// default "FilterIfLabelExists"
 	ServiceFilterMode defaults.ServiceFilterMode `json:"serviceFilterMode,omitempty"`
+	PortRange         string                     `json:"portRange"` // min-max
 }
 
 // Socks5Proxy indicates the socks5 proxy config

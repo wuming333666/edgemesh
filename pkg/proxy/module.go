@@ -69,7 +69,7 @@ func newEdgeProxy(c *v1alpha1.EdgeProxyConfig, cli *clients.Clients) (*EdgeProxy
 	}
 
 	// new proxy server
-	proxyServer, err := newProxyServer(NewDefaultKubeProxyConfiguration(listenIP.String()), c.LoadBalancer, cli.GetKubeClient(), cli.GetIstioClient(), c.ServiceFilterMode)
+	proxyServer, err := newProxyServer(NewDefaultKubeProxyConfiguration(listenIP.String(), c.PortRange), c.LoadBalancer, cli.GetKubeClient(), cli.GetIstioClient(), c.ServiceFilterMode)
 	if err != nil {
 		return nil, fmt.Errorf("new proxy server err: %v", err)
 	}

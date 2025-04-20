@@ -45,10 +45,10 @@ type ProxyServer struct {
 
 // NewDefaultKubeProxyConfiguration new default kube-proxy config for edgemesh-agent runtime.
 // TODO(Poorunga) Use container config for this.
-func NewDefaultKubeProxyConfiguration(bindAddress string) *proxyconfigapi.KubeProxyConfiguration {
+func NewDefaultKubeProxyConfiguration(bindAddress string, portRange string) *proxyconfigapi.KubeProxyConfiguration {
 	return &proxyconfigapi.KubeProxyConfiguration{
 		BindAddress: bindAddress,
-		PortRange:   "",
+		PortRange:   portRange,
 		IPTables: proxyconfigapi.KubeProxyIPTablesConfiguration{
 			SyncPeriod:    metav1.Duration{Duration: 30 * time.Second},
 			MinSyncPeriod: metav1.Duration{Duration: time.Second},
